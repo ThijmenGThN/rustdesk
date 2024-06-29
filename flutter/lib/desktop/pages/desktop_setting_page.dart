@@ -60,12 +60,16 @@ enum SettingsTabKey {
 class DesktopSettingPage extends StatefulWidget {
   final SettingsTabKey initialTabkey;
   static final List<SettingsTabKey> tabKeys = [
+    // SettingsTabKey.general,
+    // if (!bind.isOutgoingOnly() && !bind.isDisableSettings())
+    //   SettingsTabKey.safety,
+    // if (!bind.isIncomingOnly()) SettingsTabKey.display,
+    // if (!isWeb && !bind.isIncomingOnly() && bind.pluginFeatureIsEnabled())
+    //   SettingsTabKey.plugin,
+
     SettingsTabKey.general,
-    if (!bind.isOutgoingOnly() && !bind.isDisableSettings())
-      SettingsTabKey.safety,
-    if (!bind.isIncomingOnly()) SettingsTabKey.display,
-    if (!isWeb && !bind.isIncomingOnly() && bind.pluginFeatureIsEnabled())
-      SettingsTabKey.plugin,
+    SettingsTabKey.safety,
+    SettingsTabKey.display,
   ];
 
   DesktopSettingPage({Key? key, required this.initialTabkey}) : super(key: key);
