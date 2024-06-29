@@ -173,14 +173,18 @@ class _DesktopSettingPageState extends State<DesktopSettingPage>
 
   List<Widget> _children() {
     final children = [
+      // _General(),
+      // if (!bind.isOutgoingOnly() && !bind.isDisableSettings()) _Safety(),
+      // if (!bind.isDisableSettings()) _Network(),
+      // if (!bind.isIncomingOnly()) _Display(),
+      // if (!isWeb && !bind.isIncomingOnly() && bind.pluginFeatureIsEnabled())
+      //   _Plugin(),
+      // if (!bind.isDisableAccount()) _Account(),
+      // _About(),
+
       _General(),
-      if (!bind.isOutgoingOnly() && !bind.isDisableSettings()) _Safety(),
-      if (!bind.isDisableSettings()) _Network(),
-      if (!bind.isIncomingOnly()) _Display(),
-      if (!isWeb && !bind.isIncomingOnly() && bind.pluginFeatureIsEnabled())
-        _Plugin(),
-      if (!bind.isDisableAccount()) _Account(),
-      _About(),
+      _Safety(),
+      _Display(),
     ];
     return children;
   }
