@@ -50,11 +50,11 @@ class _TabInfo {
 enum SettingsTabKey {
   general,
   safety,
-  network,
+  // network,
   display,
   plugin,
-  account,
-  about,
+  // account,
+  // about,
 }
 
 class DesktopSettingPage extends StatefulWidget {
@@ -63,12 +63,9 @@ class DesktopSettingPage extends StatefulWidget {
     SettingsTabKey.general,
     if (!bind.isOutgoingOnly() && !bind.isDisableSettings())
       SettingsTabKey.safety,
-    if (!bind.isDisableSettings()) SettingsTabKey.network,
     if (!bind.isIncomingOnly()) SettingsTabKey.display,
     if (!isWeb && !bind.isIncomingOnly() && bind.pluginFeatureIsEnabled())
       SettingsTabKey.plugin,
-    if (!bind.isDisableAccount()) SettingsTabKey.account,
-    SettingsTabKey.about,
   ];
 
   DesktopSettingPage({Key? key, required this.initialTabkey}) : super(key: key);
